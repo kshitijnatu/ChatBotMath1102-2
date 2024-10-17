@@ -32,7 +32,7 @@ def home():
 def chat():
     """Handle chat requests."""
     global context
-    user_message = request.form.get("message")  # Get message from form submission
+    user_message = request.form["user-input"]  # Get message from form submission
 
     # Generate a response from the model
     result = chain.invoke({"context": context, "question": user_message})
