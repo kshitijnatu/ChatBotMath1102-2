@@ -20,12 +20,31 @@ body {
     margin-bottom: 20px;
     height: 400px;
     overflow-y: auto;
-    background-color: #eaeaea;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
     border-radius: 5px;
 }
 
 .message {
     margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.message strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.message.user {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+}
+
+.message.bot {
+    background-color: #f8d7da;
+    align-self: flex-start;
 }
 
 .input-form {
@@ -47,8 +66,20 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .input-form button:hover {
     background-color: #45a049;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
